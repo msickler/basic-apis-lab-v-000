@@ -20,5 +20,5 @@ class RepositoriesController < ApplicationController
       render 'search'
     end
   end
-  
+
 end
