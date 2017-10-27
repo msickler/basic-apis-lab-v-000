@@ -9,11 +9,11 @@ div>
   <p><%= @error %></p>
   <% elsif @repos %>
   <ul>
-    <% @repos.each do |r| %>
+    <% @repos.each do |repo| %>
       <li>
-        <%= r["name"] %><br>
-        <%= link_to r['html_url'], r['html_url'] %><br>
-        <%= r["description"] %>
+        <%= repo["name"] %><br>
+        <%= link_to repo['html_url'], repo['html_url'] %><br>
+        <%= repo["description"] %>
       </li>
     <% end %>
   </ul>
