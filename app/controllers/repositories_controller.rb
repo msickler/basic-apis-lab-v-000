@@ -10,16 +10,16 @@ class RepositoriesController < ApplicationController
         req.params['client_id'] = 'Iv1.b0e1fe1a1a5f8003'
         req.params['client_secret'] = '08bf9fb085f4a30c059aa06783b9445315815651'
         req.params['q'] = params[:query]
+
       end
+
       body = JSON.parse(@resp.body)
       if @resp.success?
-        @repos = body["items"]
+        @repos = body['items']
       else
-        @error = body["meta"]["errorDetail"]
+        @error = body['meta']['errorDetail']
       end
-    rescue Faraday::ConnectionFailed
-      @error = "There was a timeout. Please try again."
+      render 'search'
+
     end
-    render 'search'
-  end
-end
+  end 
